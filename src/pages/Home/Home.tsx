@@ -1,5 +1,5 @@
 import "./styles.scss";
-import React, { useState } from "react";
+import React from "react";
 
 import { SubmitHandler, useForm, Controller } from "react-hook-form";
 import InputMask from "react-input-mask";
@@ -23,15 +23,13 @@ const options = [
   { value: "Женский", label: "Женский" },
 ];
 
-function Home() {
+const Home = () => {
   const {
     register,
     handleSubmit,
     control,
     watch,
     formState: { errors },
-    setValue,
-    getValues,
   } = useForm<Inputs>({
     defaultValues: {
       gender: options[0],
@@ -165,6 +163,6 @@ function Home() {
       </form>
     </div>
   );
-}
+};
 
 export default Home;
