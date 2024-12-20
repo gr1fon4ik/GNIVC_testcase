@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "outDir": "./build",
+    "baseUrl": "./src",
+    "target": "es5",
+    "module": "esnext",
+    "types": ["node", "webpack-env"],
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "jsx": "react",
+    "moduleResolution": "node",
+    "allowJs": false,
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": false,
+    "resolveJsonModule": true,
+    "isolatedModules": false,
+    "noFallthroughCasesInSwitch": true,
+    "downlevelIteration": true,
+    "paths": {
+      "@root/*": ["./*"],
+      "@api/*": ["./api/*"],
+      "@assets/*": ["./assets/*"],
+      "@components/*": ["./components/*"],
+      "@pages/*": ["./pages/*"],
+      "@styles/*": ["./styles/*"],
+      "@interfaces/*": ["./interfaces/*"],
+      "@reducers/*": ["./store/reducers/*"],
+
+      "@utils/*": ["./utils/*"]
+    },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "customMatcher": "\\.m\\.(c|sa|sc)ss$"
+        }
+      }
+    ],
+  },
+  "include": ["src/**/*", "custom.d.ts"],
+  "exclude": ["node_modules", "build"]
+}
